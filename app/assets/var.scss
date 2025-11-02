@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+$root-background-color: #242424;
+$block-background-color: #ffffff;
+
+$default-text-color: #ffffff;
+$default-font-family: "Montserrat", san-serif;
+
+$default-font-size: 16px;
+$tablet-font-size: 14px;
+$mobile-font-size: 10px;
+
+$list-item-background: #2e2e2e;
+
+@mixin flexbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  box-sizing: border-box;
+}
+
+@mixin block {
+  background-color: $block-background-color;
+  box-sizing: border-box;
+  border: 2px solid rgba(136, 136, 136, 0.17);
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}
