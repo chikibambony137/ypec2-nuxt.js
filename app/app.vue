@@ -56,7 +56,7 @@ const toggleMenu = () => {
 }
 
 .app__menu_mobile {
-  position: fixed;
+  position: absolute;
   height: min-content;
   width: 50vw;
   min-width: 250px;
