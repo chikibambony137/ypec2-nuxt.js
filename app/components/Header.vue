@@ -102,7 +102,7 @@ const emit = defineEmits(['toggleMenu']);
   flex-direction: column;
 
   box-sizing: border-box;
-  min-width: 200px;
+  min-width: 220px;
 }
 
 .header__logo {
@@ -156,7 +156,7 @@ const emit = defineEmits(['toggleMenu']);
   margin-left: 10px;
 }
 
-@media (max-width: 634px) {
+@media (max-width: 532px) {
   .header__refs {
     display: none;
   }

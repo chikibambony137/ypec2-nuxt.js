@@ -56,8 +56,10 @@ const toggleMenu = () => {
 }
 
 .app__menu_mobile {
-  position: relative;
+  position: fixed;
   height: min-content;
+  width: 50vw;
+  min-width: 250px;
 
   transform: translateX(-300px);
   transition: all 0.5s ease-in-out;
@@ -99,7 +101,7 @@ const toggleMenu = () => {
 
 @media (max-width: 768px) {
   .app {
-    font-size: var.$tablet-font-size - 2;
+    font-size: var.$tablet-font-size - 1;
   }
 }
 
