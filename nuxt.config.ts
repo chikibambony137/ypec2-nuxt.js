@@ -2,12 +2,12 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'ЯПЭК 2', // default fallback title
+      title: 'Ярославский промышленно-экономический колледж', // default fallback title
       htmlAttrs: {
         lang: 'ru',
       },
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/logo2.png' },
+        { rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
       ],
     },
   },
