@@ -14,8 +14,9 @@
   </div>
 </template>
 
-<script setup>
-import { ref, useTemplateRef } from "vue";
+<script setup lang="ts">
+import { ref } from "vue";
+import { useSeoMeta } from '#imports';
 
 const menuOpen = ref(false);
 const menuStyleOpen = ref(false);
@@ -29,6 +30,15 @@ const toggleMenu = () => {
     setTimeout(() => (menuOpen.value = false), 500); // after transition
   }
 };
+
+useSeoMeta({
+  title: 'Ярославский промышленно-экономический колледж имени Пастухова, Ярославль',
+  ogTitle: 'ЯПЭК',
+  description: 'крутой колледж для крутых пацанов',
+  ogDescription: 'крутой колледж для крутых пацанов',
+  ogImage: '/logo.png',
+  ogSiteName: 'ЯПЭК',
+})
 </script>
 
 <style lang="scss">
