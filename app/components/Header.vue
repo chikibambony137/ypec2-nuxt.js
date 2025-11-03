@@ -52,7 +52,7 @@ const emit = defineEmits(['toggleMenu']);
 .header {
   display: flex;
 
-  width: 100%;
+  width: 100vw;
   height: 80px;
 
   padding: 2px 15px 2px 15px;

@@ -36,7 +36,7 @@ watch(menuOpen, () => emit('toggleMenu'));
 
   &:active {
     span {
-      background-color: rgb(157, 157, 157);
+      background-color: rgb(255, 255, 255);
     }
   }
 }
