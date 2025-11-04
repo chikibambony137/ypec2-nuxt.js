@@ -18,7 +18,7 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@pinia/nuxt", "sitemap", "robots"],
+  modules: ["@pinia/nuxt", "@nuxtjs/sitemap", "@nuxtjs/robots"],
 
   site: {
     url: "https://ypec.netlify.app",
