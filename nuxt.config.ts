@@ -18,9 +18,12 @@ export default defineNuxtConfig({
       ],
     },
   },
-  modules: ["@pinia/nuxt", "@nuxtjs/sitemap"],
+  modules: ["@pinia/nuxt", "sitemap", "robots"],
 
-  sitemap: {},
+  site: {
+    url: "https://ypec.netlify.app",
+    name: "ЯПЭК",
+  },
 
   compatibilityDate: "2025-07-15",
   devtools: { enabled: false },
