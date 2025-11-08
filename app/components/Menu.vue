@@ -13,8 +13,12 @@
 <script setup>
 const menuRefStore = useMenuRefStore();
 
+const emit = defineEmits(["closeMenu"]);
+
 const router = useRouter();
 const routeTo = (e, to) => {
+  emit("closeMenu");
+
   router.push(to);
 
   // style

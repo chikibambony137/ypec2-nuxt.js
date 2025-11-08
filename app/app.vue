@@ -3,8 +3,11 @@
     <Header class="app__header" @toggleMenu="toggleMenu"></Header>
 
     <div class="app__content">
-
-      <Menu class="app__menu_mobile" v-if="menuOpen" :class="{'app__menu_visible': menuStyleOpen}"></Menu>
+      <Menu
+        class="app__menu_mobile"
+        v-if="menuOpen"
+        @closeMenu="menuOpen = false"
+        :class="{ app__menu_visible: menuStyleOpen }"></Menu>
 
       <Menu class="app__menu"></Menu>
       <div class="app__page">
@@ -16,29 +19,30 @@
 
 <script setup lang="ts">
 import { ref } from "vue";
-import { useSeoMeta } from '#imports';
+import { useSeoMeta } from "#imports";
 
 const menuOpen = ref(false);
 const menuStyleOpen = ref(false);
 
 const toggleMenu = () => {
   if (!menuOpen.value) {
-    menuOpen.value = true;           // элемент в DOM и display != none             // дождаться рендера
-    setTimeout(() => (menuStyleOpen.value = true), 1);     // стартует transition -> transform
+    menuOpen.value = true; // элемент в DOM и display != none             // дождаться рендера
+    setTimeout(() => (menuStyleOpen.value = true), 1); // стартует transition -> transform
   } else {
-    menuStyleOpen.value = false;     // запускаем скрывающий transition
+    menuStyleOpen.value = false; // запускаем скрывающий transition
     setTimeout(() => (menuOpen.value = false), 500); // after transition
   }
 };
 
 useSeoMeta({
-  title: 'Ярославский промышленно-экономический колледж имени Пастухова, Ярославль',
-  ogTitle: 'ЯПЭК',
-  description: 'крутой колледж для крутых пацанов',
-  ogDescription: 'крутой колледж для крутых пацанов',
-  ogImage: '/logo.png',
-  ogSiteName: 'ЯПЭК',
-})
+  title:
+    "Ярославский промышленно-экономический колледж имени Пастухова, Ярославль",
+  ogTitle: "ЯПЭК",
+  description: "крутой колледж для крутых пацанов",
+  ogDescription: "крутой колледж для крутых пацанов",
+  ogImage: "/logo.png",
+  ogSiteName: "ЯПЭК",
+});
 </script>
 
 <style lang="scss">

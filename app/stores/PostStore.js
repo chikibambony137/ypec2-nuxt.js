@@ -25,15 +25,25 @@ export const usePostStore = defineStore("posts", () => {
   const addPost = (title, description, image = null) => {
     posts.value.unshift({
       id: Date.now(),
-      title: title,
-      description: description,
-      image: image,
+      title: "",
+      description: "",
+      isEdit: true,
+      image: null,
     });
 
     postsVisuality.value = [...posts.value];
     updateLocalStorage();
     
   };
+
+  const savePostData = (id, title, description) => {
+    const post = posts.value.filter((post) => post.id == id)[0];
+
+    post.title = title;
+    post.description = description;
+
+    updateLocalStorage();
+  }
 
   const searchPost = (input) => {
     if (input == "") {
@@ -67,6 +77,7 @@ export const usePostStore = defineStore("posts", () => {
     postsCount,
     loadFromLocalStorage,
     addPost,
+    savePostData,
     searchPost,
     removePost,
   };

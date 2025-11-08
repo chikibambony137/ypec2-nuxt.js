@@ -16,7 +16,7 @@ export const useMenuRefStore = defineStore("menuRefs", () => {
       route: "/abiturient",
       img: "menu-icons/abitur.png",
       altImg: "abitur.png",
-      title: "Абитуриенту",
+      title: "Абитуриентам",
     },
 
     teacher: {
@@ -32,7 +32,7 @@ export const useMenuRefStore = defineStore("menuRefs", () => {
       route: "/student",
       img: "menu-icons/stud.png",
       altImg: "stud.png",
-      title: "Студенту",
+      title: "Студентам",
     },
 
     about: {
