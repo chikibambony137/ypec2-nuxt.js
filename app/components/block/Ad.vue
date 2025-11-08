@@ -1,6 +1,6 @@
 <template>
   <div class="ad">
-    <img src="../../assets/r_farm.png" alt="r_farm" class="ad__img">
+    <a href="https://www.r-pharm.com/ru" class="ad__href"><img src="../../assets/r_farm.png" alt="r_farm" class="ad__img"></a>
   </div>
 </template>
 
@@ -19,8 +19,12 @@
     padding: 0px 20px;
 }
 
-.ad__img {
+.ad__href {
   width: 90%;
   margin: auto;
+}
+
+.ad__img {
+  width: 100%;
 }
 </style>

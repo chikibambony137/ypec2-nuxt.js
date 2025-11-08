@@ -21,8 +21,12 @@
     padding: 20px;
 }
 
-.swap__img {
+.swap__href {
   width: 90%;
   margin: auto;
+}
+
+.swap__img {
+  width: 100%;
 }
 </style>
