@@ -1,11 +1,16 @@
 <template>
   <nav class="menu">
-    <a class="menu__ref" v-for="ref in menuRefStore.refs" :key="ref.id" @click="routeTo($event, ref.route, ref.img)"><img :src=ref.img :alt=ref.altImg>{{ ref.title }}</a>
+    <a
+      class="menu__ref"
+      v-for="ref in menuRefStore.refs"
+      :key="ref.id"
+      @click="routeTo($event, ref.route, ref.img)"
+      ><img :src="ref.img" :alt="ref.altImg" />{{ ref.title }}</a
+    >
   </nav>
 </template>
 
 <script setup>
-
 const menuRefStore = useMenuRefStore();
 
 const router = useRouter();
@@ -16,7 +21,7 @@ const routeTo = (e, to) => {
   const refs = document.querySelectorAll(".menu__ref");
   refs.forEach((ref) => ref.classList.remove("menu__ref_highlight"));
   e.target.classList.add("menu__ref_highlight");
-}
+};
 </script>
 
 <style scoped lang="scss">

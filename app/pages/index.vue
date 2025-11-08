@@ -6,7 +6,8 @@
     </div>
 
     <div class="news__posts">
-      <button @click="addPost">Add</button>
+      <button class="news__addBttn" @click="addPost">Add</button>
+
       <p v-if="postStore.postsVisuality.length == 0">Ничо нет D:</p>
       <NewsPost v-for="post in postStore.postsVisuality" :key="post.id" :post>
         <h2>{{ post.title }}</h2>
@@ -49,8 +50,24 @@ const addPost = () => {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  
+
   width: 100%;
   margin-top: 2vh;
+}
+
+.news__addBttn {
+  @include var.block;
+  font-family: var.$default-font-family;
+
+  padding: 5px;
+
+  &:hover {
+    background-color: rgb(40, 187, 167);
+    color: white;
+  };
+
+  &:active {
+    background-color: rgb(35, 162, 145);
+  }
 }
 </style>

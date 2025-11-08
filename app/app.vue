@@ -72,7 +72,7 @@ useSeoMeta({
   min-width: 250px;
 
   transform: translateX(-300px);
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   @media (min-width: 1024px) {
     display: none;
@@ -80,7 +80,7 @@ useSeoMeta({
 }
 
 .app__menu_visible {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
   transform: translateX(0);
 }
 

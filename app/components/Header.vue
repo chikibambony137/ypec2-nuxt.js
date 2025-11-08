@@ -52,7 +52,7 @@ const emit = defineEmits(['toggleMenu']);
 .header {
   display: flex;
 
-  width: 100vw;
+  width: 100%;
   height: 80px;
 
   padding: 2px 15px 2px 15px;
@@ -61,14 +61,7 @@ const emit = defineEmits(['toggleMenu']);
   color: white;
 
   box-sizing: border-box;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 210.74798583984375, 213.34999084472656, 1),
-    rgba(30.78416633605957, 139.40000915527344, 132.2592315673828, 1) 24%,
-    rgba(43.149044036865234, 151.77130126953125, 138.18087768554688, 1) 47%,
-    rgba(54.393619537353516, 152.14999389648438, 130.96949768066406, 1) 72%,
-    rgba(25.33708381652832, 124.10000610351562, 102.35404968261719, 1) 100%
-  );
+  background: var.$linear-color;
 }
 
 .header__content {
