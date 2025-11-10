@@ -22,7 +22,7 @@ export const usePostStore = defineStore("posts", () => {
     localStorage.setItem("posts", JSON.stringify(posts.value));
   };
 
-  const addPost = (title, description, image = null) => {
+  const addPost = () => {
     posts.value.unshift({
       id: Date.now(),
       title: "",
@@ -32,8 +32,7 @@ export const usePostStore = defineStore("posts", () => {
     });
 
     postsVisuality.value = [...posts.value];
-    updateLocalStorage();
-    
+
   };
 
   const savePostData = (id, title, description) => {

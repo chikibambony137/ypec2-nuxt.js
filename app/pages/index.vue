@@ -1,31 +1,17 @@
 <template>
   <div class="news">
+    <h1 class="news__title">Новости</h1>
+
     <div class="news__articles articles">
       <BlockSwap class="articles__swap"></BlockSwap>
       <BlockAd class="articles__ad"></BlockAd>
     </div>
 
-    <div class="news__posts">
-      <button class="news__addBttn" @click="addPost">Add</button>
-
-      <p v-if="postStore.postsVisuality.length == 0">Ничо нет D:</p>
-      <NewsPost v-for="post in postStore.postsVisuality" :key="post.id" :post>
-        <h2>{{ post.title }}</h2>
-        <p>{{ post.description }}</p>
-      </NewsPost>
-    </div>
+    <BlockPosts class="news__posts"> </BlockPosts>
   </div>
 </template>
 
-<script setup>
-import { usePostStore } from "~/stores/PostStore";
-
-const postStore = usePostStore();
-
-const addPost = () => {
-  postStore.addPost("Jopa", "hui", "pizda");
-};
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
 @use "../assets/var.scss";
@@ -34,40 +20,21 @@ const addPost = () => {
   width: 100%;
 }
 
+.news__title {
+  font-family: var.$default-font-family;
+  font-size: 1.5rem;
+  margin-left: 20px;
+}
+
 .articles {
   display: flex;
-  gap: 1vw;
+  gap: 10px;
   width: 100%;
 }
 
 .articles__ad {
   @media (max-width: 768px) {
     display: none;
-  }
-}
-
-.news__posts {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-
-  width: 100%;
-  margin-top: 2vh;
-}
-
-.news__addBttn {
-  @include var.block;
-  font-family: var.$default-font-family;
-
-  padding: 5px;
-
-  &:hover {
-    background-color: rgb(40, 187, 167);
-    color: white;
-  };
-
-  &:active {
-    background-color: rgb(35, 162, 145);
   }
 }
 </style>

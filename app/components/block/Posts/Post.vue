@@ -46,7 +46,7 @@
 </template>
 
 <script setup>
-import { usePostStore } from "../../stores/PostStore";
+import { usePostStore } from "#imports";
 import { useTemplateRef } from "vue";
 
 const postStore = usePostStore();
@@ -77,7 +77,7 @@ const editData = () => {
 </script>
 
 <style scoped lang="scss">
-@use "../../assets/var.scss";
+@use '../../../assets/var.scss';
 
 .post {
   @include var.block;

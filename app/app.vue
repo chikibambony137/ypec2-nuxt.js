@@ -55,7 +55,7 @@ useSeoMeta({
 
 .app__content {
   display: flex;
-  gap: 1vw;
+  gap: 10px;
   padding: 10px 15px 10px 15px;
 
   max-width: 1200px;
@@ -75,7 +75,7 @@ useSeoMeta({
   width: 50vw;
   min-width: 250px;
 
-  transform: translateX(-300px);
+  transform: translateX(-1000px);
   transition: all 0.2s ease-in-out;
 
   @media (min-width: 1024px) {
@@ -122,6 +122,12 @@ useSeoMeta({
 @media (max-width: 480px) {
   .app {
     font-size: var.$mobile-font-size;
+  }
+}
+
+@media (max-width: 400px) {
+  .app {
+    font-size: var.$mobile-font-size - 1;
   }
 }
 </style>
