@@ -3,28 +3,31 @@
     <form class="post__form">
       <textarea
         class="post__textarea"
-        v-if="!post.title || post.isEdit"
+        v-if="post.isEdit"
         v-model="titleInput"
+        ref="title"
         placeholder="Заголовок"
         maxlength="100" />
 
-      <h3 class="post__title" v-else>{{ post.title }}</h3>
+      <h3 class="post__title" v-else-if="post.title">{{ post.title }}</h3>
 
       <textarea
         class="post__textarea"
-        v-if="!post.description || post.isEdit"
+        v-if="post.isEdit"
         v-model="descriptionInput"
         placeholder="Описание"
         maxlength="500" />
 
-      <p class="post__description" v-else>{{ post.description }}</p>
+      <p class="post__description" v-else-if="post.description">{{ post.description }}</p>
 
       <input v-if="post.isEdit" type="image" />
-      <p class="post__image">{{ post.image }}</p>
+      <p class="post__image" v-else-if="post.image">{{ post.image }}</p>
 
       <div class="post__buttons">
-        
-        <button class="post__editBttn" v-if="!post.isEdit" @click.prevent="post.isEdit = !post.isEdit">
+        <button
+          class="post__editBttn"
+          v-if="!post.isEdit"
+          @click.prevent="editData">
           Редактировать
         </button>
 
@@ -32,7 +35,9 @@
           Сохранить
         </button>
 
-        <button class="post__removeBttn" @click.prevent="postStore.removePost(post.id)">
+        <button
+          class="post__removeBttn"
+          @click.prevent="postStore.removePost(post.id)">
           Удалить
         </button>
       </div>
@@ -42,8 +47,10 @@
 
 <script setup>
 import { usePostStore } from "../../stores/PostStore";
+import { useTemplateRef } from "vue";
 
 const postStore = usePostStore();
+
 const props = defineProps(["post"]);
 const post = props.post;
 
@@ -53,6 +60,19 @@ const descriptionInput = ref("");
 const saveData = () => {
   post.isEdit = !post.isEdit;
   postStore.savePostData(post.id, titleInput, descriptionInput);
+};
+
+const title = useTemplateRef("title");
+const editData = () => {
+  post.isEdit = !post.isEdit;
+
+  titleInput.value = post.title;
+  descriptionInput.value = post.description;
+  // imageInput.value = post.image;
+
+  setTimeout(() => {
+    title.value.select();
+  }, 100); // сразу не сработает
 };
 </script>
 
