@@ -25,18 +25,18 @@
 
       <div class="post__buttons">
         <button
-          class="post__editBttn"
+          class="post__button post__button_edit"
           v-if="!post.isEdit"
           @click.prevent="editData">
           Редактировать
         </button>
 
-        <button class="post__saveBttn" v-else @click.prevent="saveData">
+        <button class="post__button post__button_save" v-else @click.prevent="saveData">
           Сохранить
         </button>
 
         <button
-          class="post__removeBttn"
+          class="post__button post__button_remove"
           @click.prevent="postStore.removePost(post.id)">
           Удалить
         </button>
@@ -122,9 +122,33 @@ const editData = () => {
 .post__buttons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   gap: 20px;
 
   width: 100%;
+}
+
+.post__button {
+  border: none;
+  border-radius: 10px;
+
+  font-family: var.$default-font-family;
+
+  padding: 5px 15px;
+
+  &:hover {
+    background-color: rgb(40, 187, 167);
+    color: white;
+  }
+
+  &:active {
+    background-color: rgb(35, 162, 145);
+  }
+}
+
+.post__button_remove {
+  &:hover {
+    background-color: rgb(255, 0, 0);
+  }
 }
 </style>
